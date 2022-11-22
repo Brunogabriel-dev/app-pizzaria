@@ -1,10 +1,55 @@
 import React from "react";
-import { View, Text } from 'react-native'
+import { 
+  View, 
+  Text, 
+  StyleSheet,
+  Image,
+  TextInput,
+  TouchableOpacity 
+} from 'react-native'
 
 export default function SignIn(){
   return(
-    <View>
-      <Text>Tela de login</Text>
+    <View style={styles.container}>
+      <Image
+      style={styles.logo}
+      source={require('../../assets/logo.png')}
+      />
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Digite seu email"
+          style={styles.input}
+        />
+        <TextInput
+          placeholder="Sua senha"
+          style={styles.input}
+        />
+
+      </View>
+
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1d1d2e'
+  },
+  logo:{
+    marginBottom: 18
+  },
+  inputContainer:{
+    width: '95%',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  input:{
+    width: '95%',
+    height: 40,
+    backgroundColor: '#101026'
+  }
+})

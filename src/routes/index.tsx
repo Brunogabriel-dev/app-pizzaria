@@ -14,12 +14,12 @@ function Routes(){
       <View 
       style={{ 
         flex:1, 
-        backgroundColor: '#f5f7fb', 
+        backgroundColor: '#1d1d2e', 
         justifyContent: 'center', 
         alignItems:'center' 
         }}
       >
-        <ActivityIndicator />
+        <ActivityIndicator size={60} color="#fff"/>
       </View>
     )
   }
