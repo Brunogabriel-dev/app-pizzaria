@@ -45,7 +45,9 @@ const styles = StyleSheet.create({
   inputContainer:{
     width: '95%',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingVertical: 32,
+    paddingHorizontal: 14
   },
   input:{
     width: '95%',
@@ -53,6 +55,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#101026',
     marginBottom: 12,
     borderRadius: 4,
-    paddingHorizontal: 8
+    paddingHorizontal: 8,
+    color: '#fff'
+
   }
 })
