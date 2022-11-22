@@ -8,7 +8,10 @@ const Stack = createNativeStackNavigator();
 function AuthRoutes(){
   return(
     <Stack.Navigator>
-      <Stack.Screen/>
+      <Stack.Screen name="SignIn" component={SignIn} />
     </Stack.Navigator>
   )
 }
+
+
+export default AuthRoutes;
