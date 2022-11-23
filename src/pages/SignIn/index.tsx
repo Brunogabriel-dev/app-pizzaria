@@ -12,6 +12,15 @@ export default function SignIn(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  function handleLogin(){
+
+    if(email =='' || password ===''){
+      return;
+    }
+
+    console.log("TESTE")
+  }
+
 
   return(
     <View style={styles.container}>
@@ -34,11 +43,11 @@ export default function SignIn(){
           style={styles.input}
           placeholderTextColor="#f0f0f0"
           secureTextEntry={true}
-          value={email}
-          onChangeText={setEmail}
+          value={password}
+          onChangeText={setPassword}
         />
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
 
