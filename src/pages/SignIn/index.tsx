@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
   View, 
   Text, 
@@ -9,6 +9,10 @@ import {
 } from 'react-native'
 
 export default function SignIn(){
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+
   return(
     <View style={styles.container}>
       <Image
@@ -27,6 +31,8 @@ export default function SignIn(){
           placeholder="Sua senha"
           style={styles.input}
           placeholderTextColor="#f0f0f0"
+          value={email}
+          onChangeText={ (text) => setEmail(text) }
         />
 
         <TouchableOpacity style={styles.button}>
