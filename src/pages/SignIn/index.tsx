@@ -20,10 +20,12 @@ export default function SignIn(){
         <TextInput
           placeholder="Digite seu email"
           style={styles.input}
+          placeholderTextColor="#f0f0f0"
         />
         <TextInput
           placeholder="Sua senha"
           style={styles.input}
+          placeholderTextColor="#f0f0f0"
         />
 
       </View>
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 32,
-    paddingHorizontal: 14
+    paddingHorizontal: 14,
   },
   input:{
     width: '95%',
