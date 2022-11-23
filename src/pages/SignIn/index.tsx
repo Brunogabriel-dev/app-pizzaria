@@ -25,14 +25,17 @@ export default function SignIn(){
           placeholder="Digite seu email"
           style={styles.input}
           placeholderTextColor="#f0f0f0"
+          value={email}
+          onChangeText={setEmail}
         />
 
         <TextInput
           placeholder="Sua senha"
           style={styles.input}
           placeholderTextColor="#f0f0f0"
+          secureTextEntry={true}
           value={email}
-          onChangeText={ (text) => setEmail(text) }
+          onChangeText={setEmail}
         />
 
         <TouchableOpacity style={styles.button}>
