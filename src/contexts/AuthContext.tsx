@@ -1,15 +1,39 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, ReactNode } from "react";
 
 
 type AuthContextData = {
-  user:
+  user: UserProps;
+  isAuthenticated: boolean;
 }
 
 type UserProps = {
   id: string;
   name: string;
   email: string;
-  token: string
+  token: string;
 }
 
-export const AuthContext = createContext({});
+
+type AuthProviderProps = {
+  children: ReactNode;
+}
+
+export const AuthContext = createContext({} as AuthContextData);
+
+export function AuthProvider({children}: AuthProviderProps){
+  const [user, seUser] = useState<UserProps>({
+    id: '',
+    name: '',
+    email: '',
+    token: ''
+  })
+
+  const isAuthenticated = !!user.name;
+
+
+  return(
+    <AuthContext.Provider value={{ user, isAuthenticated }}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
