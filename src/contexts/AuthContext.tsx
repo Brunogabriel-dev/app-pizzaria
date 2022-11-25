@@ -2,7 +2,6 @@ import React, { useState, createContext, ReactNode } from "react";
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { api } from '../services/api'
 
 
 type AuthContextData = {
@@ -32,13 +31,21 @@ export const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider({children}: AuthProviderProps){
   const [user, setUser] = useState<UserProps>({
-    id: '123',
-    name: 'Sujeito Programador',
-    email: 'teste@teste.com',
-    token: '123123123123123123'
+    id: '',
+    name: '',
+    email: '',
+    token: ''
   })
 
+  const [loadingAuth, setLoadingAuth] = useState(false)
+
   const isAuthenticated = !!user.name;
+
+  async function signIn({ email, password }: SignInProps){
+    setLoadingAuth(true);
+
+    
+  }
 
 
   return(
