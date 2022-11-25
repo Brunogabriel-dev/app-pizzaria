@@ -11,16 +11,20 @@ import {
 import { AuthContext } from '../../contexts/AuthContext'
 
 export default function SignIn(){
+
+  const { signIn } = useContext(AuthContext)
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  function handleLogin(){
+  async function handleLogin(){
 
     if(email =='' || password ===''){
       return;
     }
 
-    console.log("TESTE")
+    await signIn({ email, password })
+
   }
 
 
@@ -52,12 +56,12 @@ export default function SignIn(){
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
-
       </View>
 
     </View>
   )
 }
+
 const styles = StyleSheet.create({
   container:{
     flex:1,
